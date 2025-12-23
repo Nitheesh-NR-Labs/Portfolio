@@ -1,5 +1,6 @@
 const dot = document.querySelector('.cursor-dot');
 const ring = document.querySelector('.cursor-ring');
+const light = document.querySelector('.cursor-light');
 
 let mouseX = 0;
 let mouseY = 0;
@@ -16,6 +17,11 @@ document.addEventListener('mousemove', (e) => {
   if (dot) {
     dot.style.left = `${mouseX}px`;
     dot.style.top = `${mouseY}px`;
+  }
+  // move the light effect
+  if (light) {
+    light.style.left = `${mouseX}px`;
+    light.style.top = `${mouseY}px`;
   }
 });
 
@@ -36,6 +42,12 @@ function animate() {
       const scale = 1 + Math.min(dist / 1200, 0.06); // very subtle
       ring.style.transform = `translate(-50%, -50%) scale(${scale})`;
       ring.classList.add('glow');
+      // make light expand a little when moving fast
+      if (light) {
+        const size = 200 + Math.min(dist * 0.6, 220);
+        light.style.width = `${size}px`;
+        light.style.height = `${size}px`;
+      }
     }
   }
 
@@ -44,13 +56,31 @@ function animate() {
 
 animate();
 
-document.querySelectorAll('a, button, .card').forEach(el => {
+// make interactive elements trigger 'clickable' cursor morphology
+const interactive = document.querySelectorAll('a, button, .card, .nav-link');
+interactive.forEach(el => {
   el.addEventListener('mouseenter', () => {
     isHovering = true;
-    if (ring) ring.style.transform = 'translate(-50%, -50%) scale(1.6)';
+    if (ring) {
+      ring.classList.add('clickable');
+      ring.style.transform = 'translate(-50%, -50%) scale(1.15)';
+    }
+    if (light) {
+      light.style.opacity = '1';
+      light.style.width = '260px';
+      light.style.height = '260px';
+    }
   });
   el.addEventListener('mouseleave', () => {
     isHovering = false;
-    if (ring) ring.style.transform = 'translate(-50%, -50%) scale(1)';
+    if (ring) {
+      ring.classList.remove('clickable');
+      ring.style.transform = 'translate(-50%, -50%) scale(1)';
+    }
+    if (light) {
+      light.style.opacity = '0.9';
+      light.style.width = '220px';
+      light.style.height = '220px';
+    }
   });
 });
