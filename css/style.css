@@ -281,3 +281,82 @@ body::after {
   z-index: 999;
   transform: translate(-50%, -50%);
 }
+
+.about-section {
+  padding: 120px 80px;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+}
+
+/* LEFT TEXT */
+.about-intro {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  color: #bbb;
+  line-height: 1.6;
+}
+
+/* EXPERIENCE GRID */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.exp-card {
+  background: #111;
+  border: 1px solid #222;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.exp-card:hover {
+  border-color: #f5c542;
+  transform: translateY(-6px);
+}
+
+/* TAG */
+.exp-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #f5c542;
+  margin-bottom: 10px;
+}
+
+/* TITLE */
+.exp-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* HOVER TEXT */
+.exp-hover {
+  color: #999;
+  font-size: 0.95rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.exp-card:hover .exp-hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
