@@ -6,14 +6,17 @@ let mouseY = 0;
 
 let ringX = 0;
 let ringY = 0;
+let isHovering = false;
 
 document.addEventListener('mousemove', (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
 
   // dot follows instantly
-  dot.style.left = `${mouseX}px`;
-  dot.style.top = `${mouseY}px`;
+  if (dot) {
+    dot.style.left = `${mouseX}px`;
+    dot.style.top = `${mouseY}px`;
+  }
 });
 
 function animate() {
@@ -21,23 +24,33 @@ function animate() {
   ringX += (mouseX - ringX) * 0.12;
   ringY += (mouseY - ringY) * 0.12;
 
-  ring.style.left = `${ringX}px`;
-  ring.style.top = `${ringY}px`;
+  if (ring) {
+    ring.style.left = `${ringX}px`;
+    ring.style.top = `${ringY}px`;
+
+    if (!isHovering) {
+      // small zoom effect proportional to cursor movement distance
+      const dx = mouseX - ringX;
+      const dy = mouseY - ringY;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      const scale = 1 + Math.min(dist / 1200, 0.06); // very subtle
+      ring.style.transform = `translate(-50%, -50%) scale(${scale})`;
+      ring.classList.add('glow');
+    }
+  }
 
   requestAnimationFrame(animate);
 }
 
 animate();
 
-0.12  // smooth
-0.05  // very floaty
-0.2   // snappy
-
 document.querySelectorAll('a, button, .card').forEach(el => {
   el.addEventListener('mouseenter', () => {
-    ring.style.transform = 'translate(-50%, -50%) scale(1.6)';
+    isHovering = true;
+    if (ring) ring.style.transform = 'translate(-50%, -50%) scale(1.6)';
   });
   el.addEventListener('mouseleave', () => {
-    ring.style.transform = 'translate(-50%, -50%) scale(1)';
+    isHovering = false;
+    if (ring) ring.style.transform = 'translate(-50%, -50%) scale(1)';
   });
 });
