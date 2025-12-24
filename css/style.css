@@ -300,8 +300,29 @@ body::after {
 }
 
 .about-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 36px;
+  font-size: 3.4rem;
+  margin-bottom: 56px; /* extra space below About as requested */
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(90deg, #ffd800, #58a6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.65);
+  position: relative;
+}
+
+.about-section h2::after {
+  content: "";
+  display: block;
+  width: 140px;
+  height: 4px;
+  margin: 18px auto 0;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #ffd800, #58a6ff);
+  box-shadow: 0 8px 30px rgba(88,166,255,0.08);
 }
 
 .about-grid {
@@ -385,8 +406,40 @@ body::after {
 }
 
 .current-work h2 {
-  font-size: 2.5rem;
-  margin-bottom: 36px;
+  font-size: 3.2rem;
+  margin-bottom: 48px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #58a6ff, #ffd800);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+
+.current-work h2::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 4px;
+  margin: 16px auto 0;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #58a6ff, #ffd800);
+  box-shadow: 0 8px 30px rgba(255,210,60,0.06);
+}
+
+@media (max-width: 700px) {
+  .about-section h2 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    margin-bottom: 28px;
+  }
+  .current-work h2 {
+    font-size: 1.9rem;
+    letter-spacing: 2.5px;
+    margin-bottom: 28px;
+  }
 }
 
 /* Layout */
