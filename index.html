@@ -17,8 +17,8 @@
   <!-- TOP NAV -->
   <nav class="top-nav">
     <div class="nav-inner">
-      <a href="#" class="nav-link">Home</a>
-      <a href="#" class="nav-link">About</a>
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
       <a href="#" class="nav-link">Projects</a>
       <a href="#" class="nav-link">Contact</a>
     </div>
@@ -26,7 +26,7 @@
 
 
   <!-- HERO -->
-  <section class="hero">
+  <section id="home" class="hero">
     <div class="hero-top">
       <h1>
         I build <span>drones</span>, <span>rockets</span> &amp; <span>autonomous systems</span>
@@ -47,151 +47,150 @@
   </section>
 
   <!-- ABOUT -->
-<section class="about-section">
-  <h2>About</h2>
+  <section id="about" class="about-section">
+    <h2>About</h2>
 
-  <div class="about-grid">
+    <div class="about-grid">
 
-    <!-- LEFT: ABOUT YOU -->
-    <div class="about-text">
-      <p class="about-intro">
-        I’m an aerospace & robotics engineer who builds real systems —
-        not concepts.
-      </p>
+      <!-- LEFT: ABOUT YOU -->
+      <div class="about-text">
+        <p class="about-intro">
+          I’m an aerospace & robotics engineer who builds real systems —
+          not concepts.
+        </p>
 
-     <p>
-        My work spans <strong>high-power rocketry, UAV platforms, avionics,
-        autonomous robotics</strong>, and experimental systems where failure,
-        iteration, and testing are part of the process.
-     </p>
+        <p>
+          My work spans <strong>high-power rocketry, UAV platforms, avionics,
+          autonomous robotics</strong>, and experimental systems where failure,
+          iteration, and testing are part of the process.
+        </p>
 
-     <p>
-        I work at the system level — designing, integrating, breaking,
-        and rebuilding hardware until it performs reliably in real-world
-        conditions, not just on paper.
-     </p>
+        <p>
+          I work at the system level — designing, integrating, breaking,
+          and rebuilding hardware until it performs reliably in real-world
+          conditions, not just on paper.
+        </p>
+      </div>
 
+      <!-- RIGHT: EXPERIENCE GRID -->
+      <div class="experience-grid">
+
+        <div class="exp-card">
+          <span class="exp-tag">Rocketry</span>
+          <h3>IGNIS / IGNITE INDIA</h3>
+          <p class="exp-hover">
+            High-power rocket project (challenge) involving avionics, recovery systems,
+            CanSat payloads, and mission planning with GENEX SPACE.
+          </p>
+        </div>
+
+        <div class="exp-card">
+          <span class="exp-tag">Competition</span>
+          <h3>Arduino and ESP32</h3>
+          <p class="exp-hover">
+            Have done multiple projects with Arduino and ESP32, such as wireless flight simulator
+            Smart light, smart house, IOT, Smart wattering system, robots, cars.
+          </p>
+        </div>
+
+        <div class="exp-card">
+          <span class="exp-tag">Innovation</span>
+          <h3>SIM Program</h3>
+          <p class="exp-hover">
+            Built and tested multiple hardware prototypes under student
+            innovation and maker initiatives primarily on drone delivery solution. Do check out Hoverbite.
+          </p>
+        </div>
+
+        <div class="exp-card">
+          <span class="exp-tag">UAV</span>
+          <h3>Drone Systems</h3>
+          <p class="exp-hover">
+            Designed and tested multiple UAV platforms, including navigation,
+            flight control, and payload integration.
+          </p>
+        </div>
+
+      </div>
     </div>
-
-    <!-- RIGHT: EXPERIENCE GRID -->
-    <div class="experience-grid">
-
-      <div class="exp-card">
-        <span class="exp-tag">Rocketry</span>
-        <h3>IGNIS / IGNITE INDIA</h3>
-        <p class="exp-hover">
-          High-power rocket project (challenge) involving avionics, recovery systems,
-          CanSat payloads, and mission planning with GENEX SPACE.
-        </p>
-      </div>
-
-      <div class="exp-card">
-        <span class="exp-tag">Competition</span>
-        <h3>Arduino and ESP32</h3>
-        <p class="exp-hover">
-          Have done multiple projects with Arduino and ESP32, such as wireless flight simulator
-          Smart light, smart house, IOT, Smart wattering system, robots, cars.
-        </p>
-      </div>
-
-      <div class="exp-card">
-        <span class="exp-tag">Innovation</span>
-        <h3>SIM Program</h3>
-        <p class="exp-hover">
-          Built and tested multiple hardware prototypes under student
-          innovation and maker initiatives primarily on drone delivery solution. Do check out Hoverbite.
-        </p>
-      </div>
-
-      <div class="exp-card">
-        <span class="exp-tag">UAV</span>
-        <h3>Drone Systems</h3>
-        <p class="exp-hover">
-          Designed and tested multiple UAV platforms, including navigation,
-          flight control, and payload integration.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
+  </section>
 
 
   <!-- CURRENT -->
-  <section class="current-work">
-  <h2>Currently Working On</h2>
+  <section id="currently" class="block current-work">
+    <h2>Currently Working On</h2>
 
-  <div class="fc-wrapper">
-    <!-- LEFT : PRODUCT INTRO -->
-    <div class="fc-intro">
-      <h3>AETHRA Flight Controller</h3>
-      <p class="fc-tagline">
-        A fully integrated, next-generation UAV flight controller
-        designed for performance, redundancy, and clean builds.
-      </p>
+    <div class="fc-wrapper">
+      <!-- LEFT : PRODUCT INTRO -->
+      <div class="fc-intro">
+        <h3>AETHRA Flight Controller</h3>
+        <p class="fc-tagline">
+          A fully integrated, next-generation UAV flight controller
+          designed for performance, redundancy, and clean builds.
+        </p>
 
-      <p class="fc-desc">
-        AETHRA rethinks the traditional drone stack by combining
-        flight control, power distribution, sensing, telemetry,
-        and expansion into a single compact module.
-      </p>
-    </div>
-
-    <!-- RIGHT : INTERACTIVE FEATURES -->
-    <div class="fc-features">
-      <div class="fc-card">
-        <span class="fc-label">Core</span>
-        <h4>Dual-MCU Architecture</h4>
-        <p class="fc-hidden">
-          High-performance main processor with a dedicated I/O
-          co-processor for sensor handling and failsafe logic.
+        <p class="fc-desc">
+          AETHRA rethinks the traditional drone stack by combining
+          flight control, power distribution, sensing, telemetry,
+          and expansion into a single compact module.
         </p>
       </div>
 
-      <div class="fc-card">
-        <span class="fc-label">Integration</span>
-        <h4>All-in-One Stack</h4>
-        <p class="fc-hidden">
-          Integrated PDB, sensors, telemetry, and display —
-          eliminating messy wiring and compatibility issues.
-        </p>
-      </div>
+      <!-- RIGHT : INTERACTIVE FEATURES -->
+      <div class="fc-features">
+        <div class="fc-card">
+          <span class="fc-label">Core</span>
+          <h4>Dual-MCU Architecture</h4>
+          <p class="fc-hidden">
+            High-performance main processor with a dedicated I/O
+            co-processor for sensor handling and failsafe logic.
+          </p>
+        </div>
 
-      <div class="fc-card">
-        <span class="fc-label">Reliability</span>
-        <h4>Redundant Sensors</h4>
-        <p class="fc-hidden">
-          Dual IMUs, dual barometers, and multiple communication
-          paths for fault tolerance and safety.
-        </p>
-      </div>
+        <div class="fc-card">
+          <span class="fc-label">Integration</span>
+          <h4>All-in-One Stack</h4>
+          <p class="fc-hidden">
+            Integrated PDB, sensors, telemetry, and display —
+            eliminating messy wiring and compatibility issues.
+          </p>
+        </div>
 
-      <div class="fc-card">
-        <span class="fc-label">Design</span>
-        <h4>Modular ESC System</h4>
-        <p class="fc-hidden">
-          Side-mounted, clip-in ESC modules that remove the need
-          for soldering and bulky wiring harnesses.
-        </p>
-      </div>
+        <div class="fc-card">
+          <span class="fc-label">Reliability</span>
+          <h4>Redundant Sensors</h4>
+          <p class="fc-hidden">
+            Dual IMUs, dual barometers, and multiple communication
+            paths for fault tolerance and safety.
+          </p>
+        </div>
 
-      <div class="fc-card">
-        <span class="fc-label">UX</span>
-        <h4>On-Board Display</h4>
-        <p class="fc-hidden">
-          Integrated display for battery status, GPS lock,
-          flight mode, and telemetry at a glance.
-        </p>
-      </div>
+        <div class="fc-card">
+          <span class="fc-label">Design</span>
+          <h4>Modular ESC System</h4>
+          <p class="fc-hidden">
+            Side-mounted, clip-in ESC modules that remove the need
+            for soldering and bulky wiring harnesses.
+          </p>
+        </div>
 
-      <div class="fc-card">
-        <span class="fc-label">Vision</span>
-        <h4>Indian-Made, Global-Grade</h4>
-        <p class="fc-hidden">
-          Designed to compete with premium international flight
-          controllers while being manufactured efficiently in India.
-        </p>
-      </div>
+        <div class="fc-card">
+          <span class="fc-label">UX</span>
+          <h4>On-Board Display</h4>
+          <p class="fc-hidden">
+            Integrated display for battery status, GPS lock,
+            flight mode, and telemetry at a glance.
+          </p>
+        </div>
+
+        <div class="fc-card">
+          <span class="fc-label">Vision</span>
+          <h4>Indian-Made, Global-Grade</h4>
+          <p class="fc-hidden">
+            Designed to compete with premium international flight
+            controllers while being manufactured efficiently in India.
+          </p>
+        </div>
       </div>
     </div>
   </section>
