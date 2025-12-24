@@ -22,8 +22,8 @@ body {
 
 .hero h1 {
   font-size: 3.9rem;
-  line-height: 2;
-  max-width: 16ch;
+  line-height: 1.6;
+  max-width: 20ch;
   white-space: normal;
   /* narrower max-width so the title wraps into more lines (taller appearance)
      and increased line-height for added vertical spacing */
