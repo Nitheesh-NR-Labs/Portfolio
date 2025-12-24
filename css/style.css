@@ -364,3 +364,88 @@ body::after {
   transform: translateY(0);
 }
 
+.current-work {
+  padding: 140px 80px;
+  background: #0a0a0a;
+}
+
+.current-work h2 {
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+}
+
+/* Layout */
+.fc-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 80px;
+}
+
+/* Left text */
+.fc-intro h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.fc-tagline {
+  font-size: 1.2rem;
+  color: #f5c542;
+  margin-bottom: 20px;
+}
+
+.fc-desc {
+  color: #aaa;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* Feature grid */
+.fc-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Cards */
+.fc-card {
+  background: #111;
+  border: 1px solid #222;
+  padding: 26px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fc-card:hover {
+  border-color: #f5c542;
+  transform: translateY(-6px);
+}
+
+/* Label */
+.fc-label {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #f5c542;
+}
+
+/* Title */
+.fc-card h4 {
+  margin-top: 10px;
+  font-size: 1.15rem;
+}
+
+/* Hidden text */
+.fc-hidden {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #999;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.fc-card:hover .fc-hidden {
+  opacity: 1;
+  transform: translateY(0);
+}
