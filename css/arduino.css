@@ -243,3 +243,147 @@
     padding: 60px 40px;
   }
 }
+
+  /* DETAILED & FILES */
+  .arduino-detailed {
+    padding: 100px 80px;
+    border-bottom: 1px solid #1a1a1a;
+  }
+
+  .arduino-detailed h2 {
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .arduino-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 50px;
+  }
+
+  .arduino-showcase-item {
+    aspect-ratio: 1;
+  }
+
+  .arduino-img-detail {
+    aspect-ratio: 1 !important;
+    height: 100%;
+    transition: all 280ms ease;
+    cursor: pointer;
+  }
+
+  .arduino-showcase-item:hover .arduino-img-detail {
+    border-color: #2a5298 !important;
+    transform: scale(1.02);
+  }
+
+  .arduino-description {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .arduino-description h3 {
+    font-size: 1.8rem;
+    color: #2a5298;
+    margin-bottom: 20px;
+  }
+
+  .arduino-description p {
+    color: #aaa;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .arduino-files {
+    padding: 100px 80px;
+    background: linear-gradient(135deg, #0a0a0a, #0f0f0f);
+  }
+
+  .arduino-files h2 {
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .files-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .file-card {
+    background: linear-gradient(135deg, #0f1419, #1a1f2e);
+    border: 1px solid #2a3d5f;
+    border-radius: 12px;
+    padding: 28px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 280ms ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .file-card:hover {
+    border-color: #2a5298;
+    background: linear-gradient(135deg, #151c2a, #1f2a3f);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 36px rgba(42, 82, 152, 0.15);
+  }
+
+  .file-icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .file-card h4 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: #fff;
+  }
+
+  .file-card p {
+    font-size: 0.85rem;
+    color: #999;
+    margin: 0;
+  }
+
+  .file-type {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #2a5298;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  @media (max-width: 1024px) {
+    .files-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .arduino-showcase-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 700px) {
+    .arduino-detailed,
+    .arduino-files {
+      padding: 60px 40px;
+    }
+  
+    .arduino-showcase-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .files-grid {
+      grid-template-columns: 1fr;
+    }
+  }

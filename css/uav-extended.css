@@ -1,0 +1,107 @@
+/* UAV Extensions - Detailed & Files Sections */
+
+.uav-intro-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 50px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.uav-img {
+  aspect-ratio: 1 !important;
+  background: linear-gradient(135deg, #0f2a0f, #1a3a1a) !important;
+  border: 2px solid #2a4a2a !important;
+  transition: all 280ms ease;
+}
+
+.uav-intro-images .uav-img:hover {
+  border-color: #7cb342 !important;
+  transform: scale(1.02);
+}
+
+/* DETAILED */
+.uav-detailed {
+  padding: 80px;
+  text-align: center;
+  background: linear-gradient(135deg, #0a1a0a, #0f2a0f);
+  border-top: 1px solid #1a3a1a;
+  border-bottom: 1px solid #1a3a1a;
+}
+
+.uav-detailed h2 {
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+}
+
+.uav-detailed p {
+  font-size: 1rem;
+  color: #bbb;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* FILES */
+.uav-files {
+  padding: 100px 80px;
+}
+
+.uav-files h2 {
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.uav-file {
+  background: linear-gradient(135deg, #0f2a0f, #1a3a1a) !important;
+  border: 1px solid #2a4a2a !important;
+}
+
+.uav-file:hover {
+  border-color: #7cb342 !important;
+  background: linear-gradient(135deg, #152a15, #1f3a1f) !important;
+}
+
+.uav-file .file-type {
+  color: #7cb342 !important;
+}
+
+@media (max-width: 1024px) {
+  .uav-intro-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .files-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .uav-intro {
+    padding: 60px 40px;
+  }
+  
+  .uav-intro h1 {
+    font-size: 2rem;
+  }
+  
+  .uav-intro-images {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+  
+  .uav-detailed {
+    padding: 60px 40px;
+  }
+  
+  .uav-files {
+    padding: 60px 40px;
+  }
+  
+  .files-grid {
+    grid-template-columns: 1fr;
+  }
+}

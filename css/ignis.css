@@ -195,3 +195,134 @@
     padding-top: 40px;
   }
 }
+
+  /* GALLERY */
+  .ignis-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #2a1a0a;
+  }
+
+  .ignis-image-item {
+    aspect-ratio: 1;
+  }
+
+  .ignis-image-item .image-placeholder {
+    height: 100%;
+    transition: all 280ms ease;
+    cursor: pointer;
+  }
+
+  .ignis-image-item:hover .image-placeholder {
+    border-color: #ff6b35 !important;
+    transform: scale(1.02);
+    box-shadow: 0 12px 36px rgba(255, 107, 53, 0.15) !important;
+  }
+
+  /* PERFORMANCE */
+  .ignis-performance {
+    padding: 100px 0;
+    margin: 60px 0;
+    border-top: 1px solid #2a1a0a;
+    border-bottom: 1px solid #2a1a0a;
+  }
+
+  .ignis-performance h2 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .ignis-perf-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .ignis-perf-card {
+    background: rgba(255, 107, 53, 0.05);
+    border: 1px solid #3a2a1a;
+    border-radius: 8px;
+    padding: 28px;
+    transition: all 280ms ease;
+  }
+
+  .ignis-perf-card:hover {
+    border-color: #ff6b35;
+    background: rgba(255, 107, 53, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .ignis-perf-card h4 {
+    font-size: 1.2rem;
+    color: #ff6b35;
+    margin-bottom: 12px;
+  }
+
+  .ignis-perf-card p {
+    color: #999;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* FILES */
+  .ignis-files {
+    padding: 100px 80px;
+    background: linear-gradient(135deg, #0a0a0a, #1a0a0a);
+  }
+
+  .ignis-files h2 {
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .ignis-file {
+    background: linear-gradient(135deg, #1a0f0f, #2a1a0f) !important;
+    border: 1px solid #3a2a1a !important;
+  }
+
+  .ignis-file:hover {
+    border-color: #ff6b35 !important;
+    background: linear-gradient(135deg, #2a1510, #3a2515) !important;
+  }
+
+  .ignis-file .file-type {
+    color: #ff6b35 !important;
+  }
+
+  @media (max-width: 1024px) {
+    .ignis-gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .ignis-perf-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .files-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 700px) {
+    .ignis-gallery {
+      grid-template-columns: 1fr;
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+    }
+  
+    .ignis-files {
+      padding: 60px 40px;
+    }
+  
+    .files-grid {
+      grid-template-columns: 1fr;
+    }
+  }
