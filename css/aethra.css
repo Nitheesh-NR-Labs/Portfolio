@@ -1,17 +1,30 @@
 /* ======== AETHRA SHOWCASE ======== */
 .aethra-showcase {
-  background: #0a0a0a;
+  position: relative;
   overflow: hidden;
+  background: radial-gradient(circle at 8% 8%, rgba(255,216,0,0.06) 0%, rgba(255,216,0,0.03) 6%, transparent 22%), linear-gradient(180deg, #0a0a0a 0%, #070707 100%);
+}
+
+.aethra-showcase::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle at 15% 20%, rgba(255,200,0,0.06), transparent 25%), radial-gradient(circle at 85% 80%, rgba(255,190,0,0.03), transparent 20%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* HERO */
 .aethra-hero {
+  position: relative;
+  z-index: 1;
   padding: 100px 80px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
-  border-bottom: 1px solid #1a1a1a;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  background: linear-gradient(180deg, rgba(255,216,0,0.012), transparent 40%);
 }
 
 .aethra-hero-content {
@@ -98,13 +111,14 @@
 .image-placeholder {
   width: 100%;
   aspect-ratio: 1;
-  background: linear-gradient(135deg, #1a1a1a, #111);
-  border: 2px solid #222;
+  background: linear-gradient(135deg, #141414, #0d0d0d);
+  border: 2px solid rgba(255,215,0,0.06);
+  box-shadow: 0 10px 30px rgba(255,200,0,0.03), inset 0 1px 0 rgba(255,255,255,0.02);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #666;
+  color: #cfc6a0;
   font-size: 1rem;
   font-weight: 600;
 }
@@ -147,16 +161,18 @@
 }
 
 .gallery-item:hover .image-placeholder {
-  border-color: #ffd800;
+  border-color: rgba(255,200,0,0.18);
   transform: scale(1.02);
-  box-shadow: 0 12px 36px rgba(255, 216, 0, 0.1);
+  box-shadow: 0 18px 48px rgba(255,200,0,0.08);
 }
 
 /* SPECS */
 .aethra-specs {
+  position: relative;
+  z-index: 1;
   padding: 100px 80px;
-  background: linear-gradient(180deg, #0a0a0a, #111);
-  border-bottom: 1px solid #1a1a1a;
+  background: linear-gradient(180deg, rgba(255,216,0,0.01), rgba(10,10,10,0.02));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
 .aethra-specs h2 {
@@ -172,17 +188,19 @@
 }
 
 .spec-card {
-  background: #0a0a0a;
-  border: 1px solid #222;
+  background: linear-gradient(180deg, #0f0f0f, #0b0b0b);
+  border: 1px solid rgba(255,215,0,0.04);
   padding: 32px;
   border-radius: 12px;
   transition: all 280ms ease;
+  box-shadow: 0 10px 30px rgba(255,200,0,0.02);
 }
 
 .spec-card:hover {
-  border-color: #ffd800;
-  background: #111;
-  transform: translateY(-4px);
+  border-color: rgba(255,200,0,0.16);
+  background: #0f0f0f;
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(255,200,0,0.06);
 }
 
 .spec-card h4 {
@@ -265,9 +283,11 @@
 
 /* RESOURCES */
 .aethra-resources {
+  position: relative;
+  z-index: 1;
   padding: 100px 80px;
-  background: linear-gradient(180deg, #0a0a0a, #111);
-  border-bottom: 1px solid #1a1a1a;
+  background: linear-gradient(180deg, rgba(255,215,0,0.008), rgba(10,10,10,0.02));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
 .aethra-resources h2 {
@@ -283,8 +303,8 @@
 }
 
 .resource-card {
-  background: #0a0a0a;
-  border: 1px solid #222;
+  background: linear-gradient(180deg, #0f0f0f, #0b0b0b);
+  border: 1px solid rgba(255,215,0,0.04);
   padding: 32px;
   border-radius: 12px;
   text-decoration: none;
@@ -293,13 +313,14 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  box-shadow: 0 10px 30px rgba(255,200,0,0.02);
 }
 
 .resource-card:hover {
-  border-color: #ffd800;
-  background: #1a1a1a;
-  transform: translateY(-6px);
-  box-shadow: 0 12px 36px rgba(255, 216, 0, 0.1);
+  border-color: rgba(255,200,0,0.16);
+  background: #141414;
+  transform: translateY(-8px);
+  box-shadow: 0 28px 64px rgba(255,200,0,0.06);
 }
 
 .resource-icon {
@@ -353,12 +374,15 @@
 
 /* FINAL CTA */
 .aethra-cta-final {
+  position: relative;
+  z-index: 1;
   padding: 100px 80px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  background: linear-gradient(180deg, rgba(255,216,0,0.01), transparent 40%);
 }
 
 .aethra-cta-final h2 {
