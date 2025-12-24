@@ -1,0 +1,257 @@
+/* ======== UAV SYSTEMS SHOWCASE ======== */
+.uav-showcase {
+  background: linear-gradient(180deg, #0a0a0a, #0a1a0a);
+  overflow: hidden;
+  border-top: 2px solid #1a3a1a;
+}
+
+/* INTRO */
+.uav-intro {
+  padding: 100px 80px;
+  text-align: center;
+  border-bottom: 1px solid #1a3a1a;
+}
+
+.uav-intro h1 {
+  font-size: 3.8rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 20px 0;
+  line-height: 1.1;
+}
+
+.uav-intro p {
+  font-size: 1.2rem;
+  color: #bbb;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* PLATFORMS */
+.uav-platforms {
+  padding: 100px 80px;
+  border-bottom: 1px solid #1a3a1a;
+}
+
+.uav-platforms {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.uav-card {
+  position: relative;
+  background: linear-gradient(135deg, #0f1a0f, #1a2a1a);
+  border: 2px solid #2a4a2a;
+  border-radius: 14px;
+  padding: 40px;
+  transition: all 300ms cubic-bezier(0.2, 0.9, 0.2, 1);
+  overflow: hidden;
+}
+
+.uav-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.uav-card-racing {
+  border-color: #d4a574;
+}
+
+.uav-card-racing::before {
+  color: #d4a574;
+}
+
+.uav-card-racing:hover {
+  border-color: #d4a574;
+  background: linear-gradient(135deg, #1f1510, #2a1a0f);
+}
+
+.uav-card-photogrammetry {
+  border-color: #4a9eff;
+}
+
+.uav-card-photogrammetry::before {
+  color: #4a9eff;
+}
+
+.uav-card-photogrammetry:hover {
+  border-color: #4a9eff;
+  background: linear-gradient(135deg, #0f1a2a, #1a2a3a);
+}
+
+.uav-card-delivery {
+  border-color: #7cb342;
+}
+
+.uav-card-delivery::before {
+  color: #7cb342;
+}
+
+.uav-card-delivery:hover {
+  border-color: #7cb342;
+  background: linear-gradient(135deg, #0f2a0f, #1a3a1a);
+}
+
+.uav-card-research {
+  border-color: #9c27b0;
+}
+
+.uav-card-research::before {
+  color: #9c27b0;
+}
+
+.uav-card-research:hover {
+  border-color: #9c27b0;
+  background: linear-gradient(135deg, #1a0f2a, #2a1a3a);
+}
+
+.uav-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.uav-card:hover::before {
+  opacity: 1;
+}
+
+.uav-card-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.uav-card h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+}
+
+.uav-card p {
+  color: #aaa;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.uav-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.uav-feature {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #999;
+  transition: all 220ms ease;
+}
+
+.uav-card-racing:hover .uav-feature {
+  border-color: #d4a574;
+  color: #d4a574;
+}
+
+.uav-card-photogrammetry:hover .uav-feature {
+  border-color: #4a9eff;
+  color: #4a9eff;
+}
+
+.uav-card-delivery:hover .uav-feature {
+  border-color: #7cb342;
+  color: #7cb342;
+}
+
+.uav-card-research:hover .uav-feature {
+  border-color: #9c27b0;
+  color: #9c27b0;
+}
+
+/* TECH STACK */
+.uav-tech-stack {
+  padding: 100px 80px;
+}
+
+.uav-tech-stack h2 {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #fff;
+}
+
+.uav-tech-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.uav-tech-item h4 {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.uav-tech-item p {
+  color: #999;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .uav-platforms {
+    grid-template-columns: 1fr;
+  }
+  
+  .uav-tech-items {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .uav-intro h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .uav-intro {
+    padding: 60px 40px;
+  }
+  
+  .uav-intro h1 {
+    font-size: 2rem;
+  }
+  
+  .uav-platforms {
+    padding: 60px 40px;
+  }
+  
+  .uav-card {
+    padding: 24px;
+  }
+  
+  .uav-tech-stack {
+    padding: 60px 40px;
+  }
+  
+  .uav-tech-stack h2 {
+    font-size: 1.8rem;
+  }
+}
