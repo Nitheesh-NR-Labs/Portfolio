@@ -156,6 +156,68 @@ html {
   font-size: 0.95rem;
 }
 
+/* Make profile-wrap provide 3D perspective for tilt effect */
+.profile-wrap {
+  perspective: 1100px;
+}
+
+/* Hero title word stagger animation */
+.hero-title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(14px) scale(0.99);
+  animation: wordIn 680ms cubic-bezier(.2,.9,.2,1) forwards;
+}
+.hero-title span:nth-of-type(1) { animation-delay: 240ms; }
+.hero-title span:nth-of-type(2) { animation-delay: 360ms; }
+.hero-title span:nth-of-type(3) { animation-delay: 480ms; }
+
+@keyframes wordIn {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Photo tilt on hover - smooth and subtle */
+.hero-image {
+  transform-origin: center;
+  transition: transform 420ms cubic-bezier(.2,.9,.2,1), box-shadow 420ms ease;
+  will-change: transform;
+}
+.profile-wrap:hover .hero-image {
+  transform: rotateZ(-6deg) rotateY(8deg) translateY(-6px) scale(1.02);
+  box-shadow: 0 28px 80px rgba(0,0,0,0.6);
+}
+
+/* Collab badge styling */
+.collab-badge {
+  position: absolute;
+  right: -6px;
+  bottom: -10px;
+  background: linear-gradient(90deg,#58a6ff,#ffd800);
+  color: #0a0a0a;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(88,166,255,0.08);
+  transform: translateY(6px);
+  transition: transform 220ms ease, box-shadow 220ms ease, opacity 220ms ease;
+  z-index: 3;
+  opacity: 0;
+}
+.collab-badge:hover { transform: translateY(-4px); box-shadow: 0 22px 60px rgba(88,166,255,0.14); }
+
+/* reveal collab badge after entrance (it uses animate-up class, but ensure final state) */
+.collab-badge.animate-up { animation-delay: 520ms; animation-duration: 520ms; animation-fill-mode: forwards; }
+
+/* reduce animation intensity on small screens */
+@media (max-width: 700px) {
+  .hero-title { font-size: 2rem; }
+  .hero-title span { transform: none; animation: none; opacity: 1; }
+  .profile-wrap .hero-image { width: 160px; height: 160px; }
+  .collab-badge { right: 6px; bottom: -8px; padding: 8px 10px; font-size: 0.85rem; }
+}
+
 /* Top navigation */
 .top-nav {
   position: fixed;
