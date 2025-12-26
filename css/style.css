@@ -7,7 +7,7 @@
 body {
   background: #0a0a0a;
   color: #ffffff;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
   cursor: none;
 }
 
@@ -26,9 +26,9 @@ html {
 }
 
 .hero h1 {
-  font-size: 3.9rem;
-  line-height: 1.6;
-  max-width: 20ch;
+  font-size: 4.8rem;
+  line-height: 1.15;
+  max-width: 34ch;
   white-space: normal;
   /* narrower max-width so the title wraps into more lines (taller appearance)
      and increased line-height for added vertical spacing */
@@ -74,6 +74,43 @@ html {
   box-shadow: 0 24px 60px rgba(255,216,0,0.12), 0 0 30px rgba(255,215,0,0.06) inset;
 }
 
+/* Larger profile image for wide screens and gentle float animation */
+.profile-wrap .hero-image {
+  width: 380px;
+  height: 380px;
+  transition: transform 420ms cubic-bezier(.2,.9,.2,1), box-shadow 420ms ease;
+  animation: floatY 6s ease-in-out infinite;
+}
+
+@keyframes floatY {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Animate-up utility for entrance */
+.animate-up {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: upFade 780ms cubic-bezier(.2,.9,.2,1) forwards;
+}
+.delay-sm {
+  animation-delay: 160ms;
+}
+
+@keyframes upFade {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Slight emphasis for hero title using Poppins for weight */
+.hero-title {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #fff;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
 @media (max-width: 700px) {
   .hero-top {
     flex-direction: column;
@@ -84,7 +121,7 @@ html {
     height: 140px;
   }
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 }
 
@@ -213,6 +250,22 @@ body::after {
   filter: blur(6px);
   z-index: 0;
 }
+
+/* Hero decorative gradient shape */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -10% -20% 30% auto;
+  width: 80vw;
+  height: 80vh;
+  background: radial-gradient(ellipse at 20% 20%, rgba(88,166,255,0.14) 0%, transparent 30%), radial-gradient(ellipse at 80% 80%, rgba(255,216,0,0.10) 0%, transparent 28%);
+  filter: blur(38px) saturate(110%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Make sure hero content sits above decorative shapes */
+.hero > * { position: relative; z-index: 2; }
 
 /* cursor light that makes dots 'reflect' */
 .cursor-light {
