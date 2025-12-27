@@ -85,3 +85,20 @@ interactive.forEach(el => {
     }
   });
 });
+
+// subtle interactive tilt for the profile image based on pointer position
+const profileWrap = document.querySelector('.profile-wrap');
+const heroImage = document.querySelector('.hero-image');
+if (profileWrap && heroImage) {
+  profileWrap.addEventListener('mousemove', (e) => {
+    const rect = profileWrap.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width; // 0..1
+    const py = (e.clientY - rect.top) / rect.height;
+    const rotateY = (px - 0.5) * 16; // -8..8deg
+    const rotateX = (0.5 - py) * 10; // -5..5deg
+    heroImage.style.transform = `rotateZ(-6deg) rotateY(${rotateY}deg) rotateX(${rotateX}deg) translateY(-6px) scale(1.02)`;
+  });
+  profileWrap.addEventListener('mouseleave', () => {
+    heroImage.style.transform = '';
+  });
+}

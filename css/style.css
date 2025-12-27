@@ -43,6 +43,14 @@ html {
   color: #888;
 }
 
+/* small entrance animation for hero paragraph */
+.hero p {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: upFade 780ms cubic-bezier(.2,.9,.2,1) forwards;
+  animation-delay: 720ms;
+}
+
 /* Layout for title + image side-by-side */
 .hero-top {
   display: flex;
@@ -249,6 +257,11 @@ html {
 .nav-link:hover {
   background: rgba(255,216,0,0.12);
   color: #111;
+}
+
+/* keep the OS cursor hidden for interactive elements (custom cursor handles hover states) */
+a, button, .nav-link, .project-box, .fc-card, .exp-card {
+  cursor: none;
 }
 
 /* SECTIONS */
