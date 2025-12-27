@@ -26,12 +26,25 @@ html {
 }
 
 .hero h1 {
-  font-size: 4.8rem;
+  font-size: 3.6rem; /* reduced size so it sits better next to profile image */
   line-height: 1.15;
   max-width: 34ch;
   white-space: normal;
-  /* narrower max-width so the title wraps into more lines (taller appearance)
-     and increased line-height for added vertical spacing */
+}
+
+/* Hero name styling (visually similar to About title but smaller) */
+.hero-name {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #ffd800, #58a6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
 }
 
 .hero span {
@@ -179,6 +192,12 @@ html {
 .hero-title span:nth-of-type(1) { animation-delay: 240ms; }
 .hero-title span:nth-of-type(2) { animation-delay: 360ms; }
 .hero-title span:nth-of-type(3) { animation-delay: 480ms; }
+
+/* style for scrambled letters while animating */
+.hero-name .dud {
+  opacity: 0.7;
+  color: rgba(255,255,255,0.55);
+}
 
 @keyframes wordIn {
   to { opacity: 1; transform: translateY(0) scale(1); }

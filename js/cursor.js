@@ -102,3 +102,69 @@ if (profileWrap && heroImage) {
     heroImage.style.transform = '';
   });
 }
+
+// Text scramble animation for hero name (shuffle letters then resolve)
+class TextScramble {
+  constructor(el) {
+    this.el = el;
+    this.chars = '!<>-_\/[]{}—=+*^?#________';
+    this.update = this.update.bind(this);
+  }
+
+  setText(newText) {
+    const oldText = this.el.innerText;
+    const length = Math.max(oldText.length, newText.length);
+    this.queue = [];
+    for (let i = 0; i < length; i++) {
+      const from = oldText[i] || '';
+      const to = newText[i] || '';
+      const start = Math.floor(Math.random() * 20);
+      const end = start + Math.floor(Math.random() * 30);
+      this.queue.push({ from, to, start, end, char: null });
+    }
+    cancelAnimationFrame(this.frameRequest);
+    this.frame = 0;
+    return new Promise((resolve) => {
+      this.resolve = resolve;
+      this.update();
+    });
+  }
+
+  update() {
+    let output = '';
+    let complete = 0;
+    for (let i = 0; i < this.queue.length; i++) {
+      const item = this.queue[i];
+      if (this.frame >= item.end) {
+        complete++;
+        output += item.to;
+      } else if (this.frame >= item.start) {
+        if (!item.char || Math.random() < 0.28) {
+          item.char = this.randomChar();
+        }
+        output += `<span class="dud">${item.char}</span>`;
+      } else {
+        output += item.from;
+      }
+    }
+    this.el.innerHTML = output;
+    if (complete === this.queue.length) {
+      this.resolve();
+    } else {
+      this.frameRequest = requestAnimationFrame(this.update);
+      this.frame++;
+    }
+  }
+
+  randomChar() {
+    return this.chars[Math.floor(Math.random() * this.chars.length)];
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const el = document.querySelector('.hero-name');
+  if (!el) return;
+  const fx = new TextScramble(el);
+  // start with a short delay so entrance animations finish
+  setTimeout(() => fx.setText('Nitheesh Dharmaraja'), 320);
+});
