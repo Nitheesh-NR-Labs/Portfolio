@@ -27,8 +27,9 @@ document.addEventListener('mousemove', (e) => {
 
 function animate() {
   // smooth follow (lerp)
-  ringX += (mouseX - ringX) * 0.12;
-  ringY += (mouseY - ringY) * 0.12;
+  // make ring follow the dot more closely by increasing the lerp factor
+  ringX += (mouseX - ringX) * 0.25;
+  ringY += (mouseY - ringY) * 0.25;
 
   if (ring) {
     ring.style.left = `${ringX}px`;
