@@ -18,12 +18,13 @@ html {
 
 /* HERO */
 .hero {
-    font-size: clamp(4.5rem, 10vw, 9rem);
-    font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -3px;
-    text-transform: uppercase;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px;
 }
+
 .hero h1 {
   font-size: 3.6rem; /* reduced size so it sits better next to profile image */
   line-height: 1.15;
@@ -35,15 +36,18 @@ html {
 .hero-name {
   font-family: 'Poppins', 'Inter', sans-serif;
   font-weight: 800;
-  font-size: 1.15rem;
-  letter-spacing: 4px;
+  font-size: clamp(4rem, 8vw, 8rem);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+
   background: linear-gradient(90deg, #ffd800, #58a6ff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+
   display: inline-block;
+  line-height: 0.95;
 }
 
 .hero span {
