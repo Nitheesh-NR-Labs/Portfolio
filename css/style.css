@@ -36,7 +36,7 @@ html {
 .hero-name {
   font-family: 'Poppins', 'Inter', sans-serif;
   font-weight: 800;
-  font-size: clamp(4rem, 8vw, 8rem);
+  font-size: clamp(3.25rem, 6.5vw, 6.5rem);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 20px;
