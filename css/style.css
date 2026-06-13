@@ -18,13 +18,12 @@ html {
 
 /* HERO */
 .hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 80px;
+    font-size: clamp(4.5rem, 10vw, 9rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -3px;
+    text-transform: uppercase;
 }
-
 .hero h1 {
   font-size: 3.6rem; /* reduced size so it sits better next to profile image */
   line-height: 1.15;
